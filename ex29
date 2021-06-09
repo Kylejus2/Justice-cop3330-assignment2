@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int years,r;
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is the rate of return: ");
+        r=input.nextInt();
+        if(r=='0')
+          System.out.print("Invalid input");
+        if (Character.isLetter(r))
+            {
+                System.out.print("Invalid input");
+            }
+
+        years=72/r;
+    }
+}
