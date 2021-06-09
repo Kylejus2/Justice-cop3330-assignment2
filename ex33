@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+
+  public static void main(String[] args) {
+    //creating a new scanner object
+    Scanner scan = new Scanner(System.in);
+    //tell the user to ask a question
+    System.out.println("Ask a yes or no question.");
+    
+    //read the user input
+    String question = scan.nextLine();
+    //System.out.println(question);
+
+    //generate a random double between 0 - 20
+    double num = Math.random();
+    num = num * 4;
+    //conver to an int
+    int number = (int) num;
+
+  //determine answer to print
+   switch (number) {
+     case 0: 
+      System.out.println("Yes");
+      break;
+    case 1:
+      System.out.println("No");
+      break;
+    case 2:
+      System.out.println("Maybe");
+      break;
+    case 3:
+      System.out.println("Ask again later");
+      break;
+   }}}
