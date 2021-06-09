@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main
+
+{    
+    public static void main(String[]args)
+    {
+        int row,column;
+
+        for (row=1;row<=12;row++)
+        {
+            System.out.printf("%4d",row);
+            for (column=2;column<=12;column++)
+                System.out.printf("%6d",row*column);
+            System.out.printf("\n");
+        }
+    }
+}
