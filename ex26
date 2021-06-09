@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+public static void main(String[] args){
+double n,i,b,p,apr,var;
+Scanner input = new Scanner(System.in);
+System.out.print("Enter APR: ");
+apr= input.nextDouble();
+System.out.print("Enter monthly payment: ");
+p= input.nextDouble();
+System.out.print("Enter the balance of the credit card: ");
+b= input.nextDouble();
+i=apr/365;
+var=1-(1+i);
+n = (-(1/30) * (Math.log(1 + b/p * Math.pow(var,30))) / (Math.log(1 + i)));
+System.out.print("It will take you "+n+" months to pay off this card.");
+}}
