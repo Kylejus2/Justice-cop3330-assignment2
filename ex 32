@@ -1,0 +1,88 @@
+import java.util.Scanner;
+  
+public class Main {
+  
+    // Function that implements the
+    // number guessing game
+    public static void
+    guessingNumberGame()
+    {
+        // Scanner Class
+        Scanner sc = new Scanner(System.in);
+        int difficulty;
+        System.out.print("Choose the difficulty(1,2,3)");
+        difficulty= sc.nextInt();
+        int number;
+        int num;
+        
+        if (difficulty=='1'){
+          num=10;
+        // Generate the numbers
+        if (difficulty=='2')
+          num=100;
+        if (difficulty=='3')
+          num=1000;
+          
+        }
+        return num;
+        number = 1 + (int)(num*Math.random());
+        // Given K trials
+        int K=1000;
+  
+        int i, guess;
+  
+        System.out.println(
+            "A number is chosen"
+            + " between 1 to 1000."
+            + "Guess the number"
+            + " within 10 trials.");
+  
+        // Interate over K Trials
+        for (i = 0; i < K; i++) {
+  
+            System.out.println(
+                "Guess the number:");
+  
+            // Take input for guessing
+            guess = sc.nextInt();
+  
+            // If the number is guessed
+            if (number == guess) {
+                System.out.println(
+                    "Congratulations!"
+                    + " You guessed the number.");
+                break;
+            }
+            else if (number > guess
+                     && i != K - 1) {
+                System.out.println(
+                    "The number is "
+                    + "greater than " + guess);
+            }
+            else if (number < guess
+                     && i != K - 1) {
+                System.out.println(
+                    "The number is"
+                    + " less than " + guess);
+            }
+        }
+  
+        if (i == K) {
+            System.out.println(
+                "You have exhausted"
+                + K+" trials.");
+  
+            System.out.println(
+                "The number was " + number);
+        }
+    }
+  
+    // Driver Code
+    public static void
+    main(String arg[])
+    {
+  
+        // Function Call
+        guessingNumberGame();
+    }
+}
