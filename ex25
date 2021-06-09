@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        // TODO Auto-generated method stub
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the password");
+        String inputPassword = scan.next();
+        int letters=0;
+        int specialcharacters = 0;
+        int digits = 0;
+        char[] Password = inputPassword.toCharArray();
+        for (int index = 0; index < inputPassword.length(); index++)
+        {
+            if (Character.isDigit(Password[index]))
+            {
+                digits = 1;
+            }
+            if (Character.isLetter(Password[index]))
+            {
+                letters=1;
+            }
+        }
+        if (inputPassword.contains("~") || inputPassword.contains("!") || inputPassword.contains("@")
+            || inputPassword.contains("#") || inputPassword.contains("$") || inputPassword.contains("%")
+            || inputPassword.contains("^") || inputPassword.contains("&") || inputPassword.contains("*")) 
+        
+            specialcharacters = 1;
+        
+        if (inputPassword.length() < 8 && digits==1 && letters==0)
+
+            System.out.println("The password "+inputPassword+" is very weak");
+        if (inputPassword.length() < 8 && digits==0 && letters==1)
+
+            System.out.println("The password "+inputPassword+" is weak");
+
+        if (inputPassword.length() >= 8 && (digits == 1) &&(specialcharacters == 1)&&(letters==1))
+
+            System.out.println("The password "+inputPassword+" is very strong");
+
+        if (inputPassword.length() >= 8 && (letters == 1) && (digits == 1)&&(specialcharacters==0))
+
+            System.out.println("The password "+inputPassword+" is strong");
+
+    }
+}
