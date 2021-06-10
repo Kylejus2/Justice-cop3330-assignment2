@@ -75,6 +75,11 @@ public class Main {
             System.out.println(
                 "The number was " + number);
         }
+        System.out.println("Would you like to play again? Enter Y to play or any other key to quit: ");
+        playAgain = sc.nextLine();
+    }
+    while(playAgain.equalsIgnoreCase("Y"));
+    System.out.println("Thanks for playing!");
     }
   
     // Driver Code
